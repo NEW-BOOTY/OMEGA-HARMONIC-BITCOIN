@@ -1,0 +1,174 @@
+# OMEGA HARMONIC BITCOIN™
+## White Paper
+
+---
+
+## 1. Abstract
+
+The OMEGA HARMONIC BITCOIN™ project introduces a next-generation cryptographic asset platform built on original mathematical constructs, resilient cryptographic primitives, and a modular blockchain engine. It transcends the limitations of traditional proof-of-work systems by incorporating spectral prime weighting, harmonic entropy decay, and adaptive issuance curves, yielding a mathematically regulated and economically sustainable cryptocurrency architecture.
+
+---
+
+## 2. Introduction
+
+Satoshi Nakamoto’s 2008 white paper defined a peer-to-peer electronic cash system. While Bitcoin revolutionized decentralized consensus, OMEGA HARMONIC BITCOIN™ (OHBTC) evolves the protocol with greater cryptographic resilience, deeper mathematical formulation, and self-regulating issuance through Omega Harmonic Coin Dynamics (ΩHCD). The system targets quantum-resistant computation, advanced multi-network operation, and optimized mining fairness without centralized mining pools.
+
+---
+
+## 3. Mathematical Framework
+
+OMEGA HARMONIC BITCOIN’s foundations lie in:
+
+- **Spectral Totient Primes (Φπ):**  
+  Defined by weighted contributions from primes in Poisson-spaced intervals:  
+  ```
+  Φπ(k) = ∑_{p ∈ P_k} log(p) / (φ(p) · ζ(q))
+  ```
+
+- **Harmonic Scarcity Function (Ω):**  
+  Reflecting block reward decay harmonically with network entropy:  
+  ```
+  Ω(n) = H_φ(n) · ζ(q)⁻¹, where H_φ(n) = ∑_{i=1}^n 1/φ(i)
+  ```
+
+- **Prime-weighted Poisson Probabilities (λ_p):**  
+  Used in APW mining:  
+  ```
+  P(k; λ_p) = (λ_p^k · e^(−λ_p)) / k!,  where λ_p = p · Φπ(k)
+  ```
+
+---
+
+## 4. ΩHCD: Omega Harmonic Coin Dynamics
+
+ΩHCD governs issuance by scaling rewards with a decay curve linked to the Riemann Zeta function:
+
+- **Block Reward Function:**  
+  ```
+  R(e, q) = floor(Ω(e) · 10^8), with q as a dynamic scarcity factor
+  ```
+
+- **Economic Dynamics:**  
+  ΩHCD models deflationary behavior without halving, enabling smoother token economics.
+
+- **Spectral Regulation:**  
+  Blocks are tied to prime entropy functions rather than block height alone, discouraging centralized hashrate domination.
+
+---
+
+## 5. APW-PHD: Prime-Weighted Poisson Hybrid Distribution
+
+The mining model balances randomness and fairness through:
+
+- Poisson distribution seeded by spectral λ_p from prime entropy
+- Difficulty calibrated dynamically per epoch
+- Eliminates need for hash-nonce brute-force
+- Ensures sustainable mining entry cost
+
+---
+
+## 6. Consensus & Chain Validation
+
+OHBTC maintains chain integrity via:
+
+- Canonical transaction representation
+- Full signature verification (`SHA256withRSA`)
+- Block linkage using `computeHash()`
+- `isValidChain()` audit across entire ledger
+
+Genesis block is seeded with null hash and zero entropy.
+
+---
+
+## 7. Security Architecture
+
+- **Key Exchange:** X25519 with DHKEM (Hybrid Key Encapsulation)
+- **Symmetric Encryption:** AES-256-GCM for ledger and wallet storage
+- **Digital Signatures:** RSA-4096 with canonical form validation
+- **Networking:** REST API with sandboxed test/dev networks
+- **Invalid TX Detection:** Enforced at protocol edges (CLI, Jetty)
+
+---
+
+## 8. Multi-Network Protocol
+
+The architecture supports:
+
+- `mainnet` (immutable)
+- `testnet` (sandboxed testing)
+- `devnet` (resettable prototyping)
+
+Each chain uses separate ledger pools, keys, and configuration.
+
+---
+
+## 9. Web3 Integration & CLI Governance
+
+While OHBTC does not natively use EVM, it features:
+
+- Full REST Jetty Server at `http://localhost:8080/api`
+- Web UI with TX pool viewer and submit form
+- CLI engine with transaction validation, mining, and metrics
+- Multiple runtime flags (`--network`, `--server`)
+
+---
+
+## 10. Comparative Analysis with Bitcoin
+
+| Feature                  | Bitcoin                    | OMEGA HARMONIC BITCOIN       |
+|--------------------------|----------------------------|-------------------------------|
+| Mining                   | Hash brute-force           | Prime-weighted Poisson        |
+| Block Reward             | Halving schedule           | Harmonic scarcity curve       |
+| Cryptographic Keys       | ECDSA                      | RSA-4096, DHKEM, AES-GCM      |
+| Smart Contracts          | Limited (via EVM)          | Optional scripting layer      |
+| Security Target          | Classical Threats          | Post-quantum ready            |
+| Ledger Flexibility       | Static single chain        | Multi-network support         |
+| Fork Risk                | Manual consensus           | Spectral validation & audit   |
+
+---
+
+## 11. Conclusion
+
+OMEGA HARMONIC BITCOIN™ delivers a fully original, mathematically driven protocol designed to surpass Bitcoin in cryptographic strength, issuance regulation, and blockchain modularity. ΩHCD, APW-PHD, and X25519-DHKEM together create a hardened and adaptive digital asset infrastructure engineered for the post-Bitcoin era.
+
+---
+
+## 12. Appendix A: Formal Equations
+
+```
+Ω(n) = ∑_{i=1}^n 1/φ(i) · ζ(q)^-1  
+Φπ(k) = ∑_{p∈P_k} log(p) / (φ(p) · ζ(q))  
+P(k; λ_p) = (λ_p^k · e^(−λ_p)) / k!  
+```
+
+---
+
+## 13. Appendix B: Modular Java Architecture
+
+```
+src/
+├── dev.royal.cryptoverse
+│   ├── apw                 // APWPoissonMiner.java
+│   ├── omega               // OmegaHarmonicIssuer.java
+│   ├── miner               // BlockMiner.java
+│   ├── wallet              // Transaction, Wallet, Validator
+│   ├── ledger              // Blockchain, Block, LedgerStore
+│   ├── EngineCLI_Server.java
+│   └── CryptoEngineLauncher.java
+```
+
+---
+
+## 14. Copyright
+
+```
+Copyright © 2025 Devin B. Royal.
+All Rights Reserved.
+
+OMEGA HARMONIC BITCOIN™ is an original cryptographic system.
+
+Unauthorized redistribution or derivative use is strictly prohibited. Any party profiting from this work must enter a royalty agreement with the author. For licensing and technical audit inquiries, contact:
+
+📧 PAY_ME@MY.COM
+📧 JAVA-DEVELOPER@PROGRAMMER.NET
+```
